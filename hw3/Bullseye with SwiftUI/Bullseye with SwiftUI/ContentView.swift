@@ -24,14 +24,14 @@ struct ContentView: View {
                 Spacer()
                 
                 VStack() {
-                    Text("Current Level")
+                    Text("Current Level").padding(.trailing)
                     Text("1")
                 }
             }
             Spacer()
             Text("Move the slider to:").font(.system(size: 30.0))
             Text("25").font(.system(size: 30.0))
-            Slider(value: $num, in: 0...100)
+            Slider(value: $num, in: 0...100).padding()
             Button("Check") {
                 
             }
