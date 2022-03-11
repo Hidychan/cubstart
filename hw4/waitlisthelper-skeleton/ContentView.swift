@@ -21,25 +21,46 @@ struct ContentView: View {
         
                     ZStack {
                         //YOUR CODE HERE (background)//
+                        Image("calculate_background")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            
+                            
 
                         VStack {
                             Spacer()
                             //YOUR CODE HERE (title)//
+                            Text("WILL YOU GET OFF THE WAITLIST")
+                                .font(.largeTitle)
+                                .bold()
+                                .foregroundColor(.black)
+                                .padding()
 
                             Spacer()
+                            
                             HStack {
                                 //YOUR CODE HERE (description)//
+                                Text(" Place on Waitlist : \( waitlistPlace, specifier: "%.f")")
                                 
                                 Spacer()
                             }
                             //YOUR CODE HERE (slider)//
+                            
+                            Slider(value: $waitlistPlace , in: 0...200 , step: 1 )
+                                .padding()
+                            
+                        
                            
                             HStack {
                                 //YOUR CODE HERE (description)//
+                                Text(" Class Size : \( classSize, specifier: "%.f")")
                                 
                                 Spacer()
                             }
                             //YOUR CODE HERE (slider)//
+                            
+                            Slider(value: $classSize , in: 0...1000 , step: 1 )
+                                .padding()
                             
 //                            NavigationLink(destination: ResultView(prob: $probability, feedback: $text), isActive: $calculate) { EmptyView() } .padding()
                             
@@ -140,3 +161,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
